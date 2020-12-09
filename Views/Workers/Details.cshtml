@@ -1,0 +1,67 @@
+﻿@model WebApplication1.Models.Worker
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Worker</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Project)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Job)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.YearsOfExperience)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.YearsOfExperience)
+        </dd>
+        <dt class="col-sm-2">
+            Actions
+        </dt>
+        <dd class="col-sm-10">
+            <button type="button" class="btn btn-outline-dark btn-sm" onclick="location.href='@Url.Action("SendEmail", "Workers", new { id = Model.Id })'"> Send Email </button>
+            <button type="button" class="btn btn-outline-dark btn-sm" onclick="location.href='@Url.Action("#", "#", new { id = Model.Id })'"> Permission Demand</button>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

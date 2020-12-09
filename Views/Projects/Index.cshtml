@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebApplication1.Models.Project>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Projects</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@foreach (var project in Model)
+{
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">@project.Name</h5>
+            <p class="card-text">@project.Description</p>
+            <a class="card-link" asp-action="Edit" asp-route-id="@project.Id">Edit</a>
+            <a class="card-link" asp-action="Details" asp-route-id="@project.Id">Details</a>
+            <a class="card-link" asp-action="Delete" asp-route-id="@project.Id">Delete</a>
+        </div>
+    </div>
+}
+
